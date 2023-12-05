@@ -7,6 +7,8 @@ module.exports = {
   buscarTodos: async (req, res) => {
     console.log("eae");
     let json = { error: "", result: [] };
+    let json1 = { eae: "eae1" };
+    let json2 = { eae: "eae2" };
 
     let pessoas = await pessoaService.buscarTodos();
 
@@ -18,7 +20,9 @@ module.exports = {
       });
     }
 
-    res.json(json);
+    console.log(json2.eae)
+    res.json({ json, json1, json2 });
+    res.end();
   },
 
   buscarPessoa: async (req, res) => {
